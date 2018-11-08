@@ -19,8 +19,8 @@ class App extends React.Component {
       <Provider store={store}>
         <BrowserRouter>
           <div className="App">
-          <NavBar />
-          <Footer />
+            <NavBar />
+            <Footer />
           </div>
 
         </BrowserRouter>

@@ -17,7 +17,7 @@ export namespace NavBar {
   }
 }
 
-class NavBar extends React.Component<any, NavBar.IState> {
+class NavBar extends React.Component<{}, NavBar.IState> {
   state = {
       isOpen: false
     };
