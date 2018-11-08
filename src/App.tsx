@@ -9,17 +9,18 @@ import { BrowserRouter } from 'react-router-dom';
 
 import './App.css';
 import NavBar from './components/NavBar';
+import Footer from './components/Footer';
 
 const store:any = createStore(reducers, applyMiddleware(promise));
 
 class App extends React.Component {
-  public render() {
+  render() {
     return (
       <Provider store={store}>
         <BrowserRouter>
           <div className="App">
           <NavBar />
-          Test
+          <Footer />
           </div>
 
         </BrowserRouter>

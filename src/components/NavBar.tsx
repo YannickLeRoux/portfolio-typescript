@@ -11,11 +11,13 @@ import {
   NavItem,
    } from 'reactstrap';
 
-interface IState {
-  isOpen: boolean;
+export namespace NavBar {
+  export interface IState {
+ isOpen: boolean;
+  }
 }
 
-class NavBar extends React.Component<any, IState> {
+class NavBar extends React.Component<any, NavBar.IState> {
   state = {
       isOpen: false
     };
