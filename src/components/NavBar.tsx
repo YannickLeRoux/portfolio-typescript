@@ -35,7 +35,7 @@ class NavBar extends React.Component<{}, NavBar.IState> {
             <Link className="navbar-brand" to='/'>Yannick Le Roux </Link>
             <span id="tagline" className="navbar-brand">
               <FontAwesomeIcon icon={faLaptopCode} style={{color: 'white'}}/>
-              <small>  Developer in the making</small>
+              <small>   Developer in the making</small>
             </span>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
