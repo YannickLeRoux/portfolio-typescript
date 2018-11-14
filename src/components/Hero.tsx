@@ -4,9 +4,11 @@ import { Link } from 'react-router-dom';
 import LazyHero from 'react-lazy-hero';
 import '../assets/css/Paralax-Hero-Banner.css';
 
+const backgroundImgURL = 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e3b92161cef01773ab8e0f83d4da1126&auto=format&fit=crop&w=1050&q=80';
+
 export namespace Hero {
-  export interface State{
-    offsetHeight: string | null;
+  export interface State {
+    offsetHeight: string|null;
   }
 }
 
@@ -16,17 +18,15 @@ class Hero extends React.Component<any, Hero.State> {
   }
 
   componentDidMount() {
-    const navbar = document.querySelector('nav');
-      if (navbar) {
-        this.setState({offsetHeight: navbar.offsetHeight + 'px'})
-      }
+    const navbar = document.querySelector('nav') || { offsetHeight: '56'}; // avoids returning null
+    this.setState({offsetHeight: navbar.offsetHeight + 'px'});
   }
 
   render() {
     return (
       <section>
         <LazyHero
-          imageSrc='https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e3b92161cef01773ab8e0f83d4da1126&auto=format&fit=crop&w=1050&q=80'
+          imageSrc={backgroundImgURL}
           color='rgb(0,0,0)'
           opacity={0.2}
           minHeight='75vh'

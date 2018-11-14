@@ -75,17 +75,25 @@
   padding-left:18px;
   padding-right:18px;
   color:#ffffff;
+  text-shadow: 0px 1px 1px rgba(0,0,0,0.5);
 	transition: all 0.3s ease-in-out;
 }
 
 
-.navigation-clean.navbar-light .navbar-nav .nav-link:hover {
+.navigation-clean.navbar-light .navbar-nav .nav-link:hover, .active {
     color: #fff;
 		transition: all 0.2s ease-in-out;
-		transform: scale(1.2);
+    transform: scale(1.2);
+    text-shadow: 1px 1px 2px rgb(255,213,108), 0 0 25px rgb(255,213,108), 0 0 5px rgb(255,199,66);
 
 }
 
+.active {
+  color: #fff;
+  transition: all 0.2s ease-in-out;
+  transform: scale(1.2);
+  text-shadow: 1px 1px 2px rgb(255,213,108), 0 0 25px rgb(255,213,108), 0 0 5px rgb(255,199,66);
+}
 
 .navigation-clean .navbar-nav > li > .dropdown-menu {
   margin-top:-5px;
@@ -102,12 +110,6 @@
 .navigation-clean .dropdown-menu .dropdown-item:focus, .navigation-clean .dropdown-menu .dropdown-item:hover {
   background:#eee;
   color:inherit;
-}
-
-.active {
-	transition: border 0.3s ease-in-out;
-	border: 1px solid white;
-  background-color:transparent;
 }
 
 .hidenav {
