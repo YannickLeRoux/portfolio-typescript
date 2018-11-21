@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import LazyHero from 'react-lazy-hero';
 import '../assets/css/Paralax-Hero-Banner.css';
 
-const backgroundImgURL = 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e3b92161cef01773ab8e0f83d4da1126&auto=format&fit=crop&w=1050&q=80';
+const backgroundImgURL = 'https://images.unsplash.com/photo-1541075217473-93119871682d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5e2eb08253df1eb24e6527cbc169440d&auto=format&fit=crop&w=2000&q=80';
 
 export namespace Hero {
   export interface State {
@@ -13,13 +13,19 @@ export namespace Hero {
 }
 
 class Hero extends React.Component<any, Hero.State> {
-  state: Hero.State = {
-    offsetHeight: '56px'
+  constructor(props: any) {
+    super(props);
+    this.state  = {
+      offsetHeight: '56px'
+    }
+
   }
 
   componentDidMount() {
-    const navbar = document.querySelector('nav') || { offsetHeight: '56'}; // avoids returning null
-    this.setState({offsetHeight: navbar.offsetHeight + 'px'});
+    const navbar = document.querySelector('nav');
+    if (navbar) {
+      this.setState({offsetHeight: navbar.offsetHeight + 'px'});
+    }
   }
 
   render() {
