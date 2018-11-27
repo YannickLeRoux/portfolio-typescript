@@ -1,5 +1,8 @@
 declare module 'react-lazy-hero';
 
+// declare const Img: React.Component;
+// declare const LazyHero: React.Component;
+
 //   interface IProps {
 //     children: any;
 //     className:string;
