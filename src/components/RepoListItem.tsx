@@ -1,9 +1,12 @@
 import * as React from 'react';
-import * as PropTypes from 'prop-types';
-
 import github from '../assets/img/GitHub-Mark-64px.png';
 
-const RepoListItem = ({ name, link, desc }) => {
+type Props = {
+  name: string;
+  link: string;
+  desc: string;
+}
+const RepoListItem: React.SFC<Props> = ({ name, link, desc }) => {
   return (
     <React.Fragment key={name}>
       <li className="list-group-item repolistitem">
@@ -30,12 +33,6 @@ RepoListItem.defaultProps = {
   name: '',
   link: 'https://github.com/YannickLeRoux',
   desc: 'No Description'
-};
-
-RepoListItem.propTypes = {
-  name: PropTypes.string.isRequired,
-  link: PropTypes.string.isRequired,
-  desc: PropTypes.string,
 };
 
 export default RepoListItem;

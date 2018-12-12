@@ -22,6 +22,7 @@ const GET_REPOS = gql`
   }
   `;
 
+
 class ReposList extends React.Component {
 
   render() {
@@ -37,7 +38,7 @@ class ReposList extends React.Component {
             <React.Fragment>
             <h2>The { data.user.repositories.edges.length } latest public projects I worked on:</h2>
             <ul className="list-group">
-              { data.user.repositories.edges.map((repo) => {
+              { data.user.repositories.edges.map( (repo: any) => {
           return (
             <RepoListItem
               key={ repo.node.url }

@@ -1,6 +1,13 @@
 import * as React from 'react';
 
-const PortfolioCard = ({ source, link, title, desc }) => {
+type Props = {
+  source: string;
+  link: string;
+  title: string;
+  desc: string;
+}
+
+const PortfolioCard: React.SFC<Props> = ({ source, link, title, desc }) => {
   return (
     <section className="portfolio-card">
       <div className="image-portfolio">

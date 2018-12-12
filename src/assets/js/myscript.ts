@@ -8,7 +8,7 @@ const myScript = () => {
 
   const main: HTMLElement | null = document.querySelector('main');
 
-    const handleImgOver = () => {
+    function handleImgOver(this: HTMLElement): void {
         const img: HTMLElement | null = this.querySelector('img');
         const overlay: HTMLElement | null = this.querySelector('.overlay');
 
@@ -18,7 +18,7 @@ const myScript = () => {
         }
     }
 
-    const handleImgLeave = () => {
+    function handleImgLeave(this: HTMLElement): void {
         const img: HTMLElement | null = this.querySelector('img');
         const overlay: HTMLElement | null = this.querySelector('.overlay');
 
@@ -48,7 +48,7 @@ const myScript = () => {
 
     window.addEventListener('scroll', handleScrollDown);
 
-    const handleTopMargin = () => {
+    const handleTopMargin = (): void => {
         if ( navbar && main ) {
             const navHeight = navbar.offsetHeight;
             main.style.setProperty('margin-top', navHeight + 'px');
@@ -58,8 +58,10 @@ const myScript = () => {
     handleTopMargin();
     window.addEventListener('resize', handleTopMargin);
 
-    function handleCloseNav() {
-        navCollapse.classList.remove('show');
+    const handleCloseNav = () => {
+        if ( navCollapse ) {
+            navCollapse.classList.remove('show');
+        }
     }
 
     navLinks.forEach(link => link.addEventListener('click', handleCloseNav));
