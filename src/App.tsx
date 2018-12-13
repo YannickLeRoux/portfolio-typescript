@@ -12,7 +12,7 @@ import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import MainNavigation from './components/MainNavigation';
 
-const store:any = createStore(reducers, applyMiddleware(promise));
+const store: any = createStore(reducers, applyMiddleware(promise));
 
 class App extends React.Component {
   render() {
