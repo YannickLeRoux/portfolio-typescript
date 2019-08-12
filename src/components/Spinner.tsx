@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
 const duration = '1.4s';
@@ -43,9 +43,7 @@ const StyledCircle = styled.circle`
   stroke-dasharray: ${offset};
   stroke-dashoffset: 0;
   transform-origin: center;
-  animation:
-    ${dash} ${duration} ease-in-out infinite,
-    ${colors} 5.2s ease-in-out infinite;
+  animation: ${dash} ${duration} ease-in-out infinite, ${colors} 5.2s ease-in-out infinite;
 `;
 
 const Spinner = () => {

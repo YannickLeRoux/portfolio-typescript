@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { ReactNode } from 'react';
 import styled, { keyframes } from 'styled-components';
 
 const expandOpen = keyframes`
@@ -20,11 +20,11 @@ const expandOpen = keyframes`
   `;
 
 const StyledButton = styled.button`
-  color: #ffffff ;
+  color: #ffffff;
   font-size: 1.2rem;
-  background-color: #127EA5;
-  background-image: url("https://www.transparenttextures.com/patterns/dark-denim-3.png");
-  border-color: #00A7E8;
+  background-color: #127ea5;
+  background-image: url('https://www.transparenttextures.com/patterns/dark-denim-3.png');
+  border-color: #00a7e8;
   border-radius: 0px;
   font-family: 'Roboto Condensed', sans-serif;
   padding: 10px 30px;
@@ -36,30 +36,27 @@ const StyledButton = styled.button`
   animation-timing-function: ease-out;
   -webkit-animation-timing-function: ease-out;
   visibility: visible !important;
-  transition:all 0.8s, color 0.3s 0.3s;
+  transition: all 0.8s, color 0.3s 0.3s;
 
   &:hover {
     background-color: #59c3c3;
-    border-color: #99DDC8;
-    box-shadow:0 0 0 5px rgba(0,0,0,0.4) inset;
-    text-shadow: 0 1px rgba(0,0,0,0.4);
-
+    border-color: #99ddc8;
+    box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.4) inset;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.4);
   }
 
   &:active {
-    background-color: #127EA5;
-    border-color: #00A7E8;
-
+    background-color: #127ea5;
+    border-color: #00a7e8;
   }
-  `;
+`;
 
-export default class Button extends React.Component {
-  render() {
-    return (
-      <StyledButton>
-        {this.props.children}
-      </StyledButton>
-    );
-  }
+interface ButtonProps {
+  children: ReactNode;
 }
 
+const Button = ({ children }: ButtonProps): JSX.Element => {
+  return <StyledButton>{children}</StyledButton>;
+};
+
+export default Button;

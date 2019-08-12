@@ -1,13 +1,6 @@
-import * as React from 'react';
+import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import {
-    Home,
-    About,
-    Portfolio,
-    Blog,
-    Contact,
-    FourOFour
-} from './routes';
+import { Home, About, Portfolio, Blog, Contact, FourOFour } from './routes';
 
 // import BlogPost from '../components/BlogPost';
 
@@ -15,7 +8,7 @@ const MainNavigation = () => {
   return (
     <main>
       <Switch>
-        <Route activeClassName="active" path="/about" exact component={About}/>
+        <Route activeClassName="active" path="/about" exact component={About} />
         <Route activeClassName="active" path="/portfolio" exact component={Portfolio} />
         {/*<Route path="/blog/:slug"
           render={(props) => <BlogPost {...this.props} {...props} />}/> */}
